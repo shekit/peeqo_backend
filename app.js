@@ -1,9 +1,10 @@
 var express = require('express');
+
+var routes = require('./routes/index')
 var app = express();
 
-app.get('/', function(req, res){
-	res.send('Hello World')
-})
+
+app.use('/', routes)
 
 var server = app.listen(3000, function(){
 	var host = server.address().address;
